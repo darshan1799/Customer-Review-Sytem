@@ -4,6 +4,7 @@ const Userschema = require("./Db/UserSchema");
 const jwt = require("jsonwebtoken");
 const CookieParser = require("cookie-parser");
 const app = express();
+require("dotenv").config();
 
 const cors = require("cors");
 app.use(express.json());
@@ -63,6 +64,6 @@ app.put("/api/answer", async (req, res) => {
   }
 });
 
-app.listen(2000, () => {
+app.listen(process.env.PORT || 2000, () => {
   console.log("App Listen On 2000");
 });

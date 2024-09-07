@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-const url = "mongodb://localhost:27017/REVIEWQUESTION";
+//const url = "mongodb://localhost:27017/REVIEWQUESTION";
+const url = process.env.MONGOURL;
 const connect = mongoose.connect(url).then(() => {
   console.log("Connected");
 });
